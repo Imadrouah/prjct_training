@@ -1,0 +1,297 @@
+:root {
+    --blue-color: #0075ff;
+    --blue-alt-color: #0d69d5;
+    --orange-color: #f59e0b;
+    --green-color: #22c55e;
+    --red-color: #f44336;
+    --grey-color: #888;
+}
+body {
+    font-family: "Open Sans", sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-image: url("./IMG-20230506-WA0038.jpg");
+    background-size: cover;
+    height: 620px;
+}
+@media (max-width: 767px) {
+    body {
+        flex-direction: column;
+        height: 100%;
+        gap: 10px;
+    }
+}
+body > span {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+    backdrop-filter: blur(5px);
+}
+a {
+    text-decoration: none;
+}
+.toggle-checkbox {
+    -webkit-appearance: none;
+    appearance: none;
+    display: flex;
+}
+.toggle-switch {
+    background-color: #ccc;
+    width: 78px;
+    height: 32px;
+    border-radius: 16px;
+    position: relative;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.toggle-switch::before {
+    font-family: var(--fa-style-family-classic);
+    content: "\f185";
+    font-weight: 900;
+    background-color: white;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    border-radius: 50%;
+    top: 4px;
+    left: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #aaa;
+    transition: 0.3s;
+}
+.toggle-checkbox:checked + .toggle-switch {
+    background-color: var(--blue-color);
+}
+.toggle-checkbox:checked + .toggle-switch::before {
+    content: "\f186";
+    left: 50px;
+    color: var(--blue-color);
+}
+form {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    height: 380px;
+    /* background-color: var(--orange-color); */
+    background-color: #119977;
+}
+.dark form {
+    /* background-color: #e3b341; */
+    background-color: #117799;
+}
+.myName,
+.myAge {
+    width: 100%;
+    flex-direction: column;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+}
+label {
+    font-size: 14px;
+    font-weight: bold;
+    padding-bottom: 5px;
+}
+label > span {
+    color: white;
+}
+.dark label > span {
+    color: black;
+}
+form input:not([type="submit"], [type="checkbox"]) {
+    display: inline-flex;
+    /* background-color: black; */
+    color: transparent;
+    caret-color: coral;
+    height: 1px;
+    border-radius: 6px;
+    border: none;
+    transition: 0.3s;
+}
+form input:not([type="submit"], [type="checkbox"]):focus {
+    padding: 5px 10px;
+    height: 30px;
+    color: black;
+    outline: none;
+}
+.dark form input:not([type="submit"], [type="checkbox"]):focus {
+    color: white;
+}
+form input::placeholder {
+    /* color: #bfbfbf; */
+    transition: 0.3s;
+    opacity: 0;
+    font-size: 13px;
+}
+form input:not([type="submit"], [type="checkbox"]):focus::placeholder {
+    opacity: 1;
+}
+small {
+    display: none;
+    margin: 10px auto 0;
+    font-size: 0.8em;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    width: fit-content;
+}
+.true:focus + small {
+    display: block;
+}
+.shake {
+    animation: shake 0.5s;
+}
+form input[type="submit"],
+form button {
+    /* background-color: #00ffff; */
+    border: none;
+    font-weight: bold;
+    padding: 8px 4px;
+    border-radius: 6px;
+    font-size: 13px;
+    cursor: pointer;
+    background-color: #1976d2;
+    color: #ffffff !important;
+}
+.dark form input[type="submit"],
+.dark button {
+    background-color: #64b5f6;
+    /* background-color: #00cccc; */
+    /* color: black; */
+}
+/* button {
+    margin-left: 10px;
+} */
+.invalid {
+    animation: shake 0.5s;
+}
+.invalid input:not([type="submit"], [type="checkbox"]) {
+    background-color: var(--red-color);
+}
+.choice {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    gap: 10px;
+}
+.info {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.p2 {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+}
+.p2 a {
+    padding: 8px 15px;
+    border-radius: 5px;
+    background-color: var(--red-color);
+    color: white;
+    font-size: 0.8em;
+}
+.n1,
+.n2 {
+    display: flex;
+    gap: 5px;
+}
+.n1 > span,
+.n2 > span {
+    font-weight: bold;
+    text-transform: capitalize;
+}
+/* removing decrement/increment buttons inside of input[number] */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+@keyframes shake {
+    0% {
+        transform: translateX(0px);
+    }
+    10%,
+    90% {
+        transform: translateX(-10px);
+    }
+    30%,
+    70% {
+        transform: translateX(10px);
+    }
+    50% {
+        transform: translateX(0px);
+    }
+}
+
+.speak {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    height: 380px;
+    background-color: #117799;
+}
+.dark .speak {
+    background-color: #119977;
+}
+.speak button {
+    border: none;
+    font-weight: bold;
+    padding: 8px 4px;
+    border-radius: 0 0 6px 6px;
+    font-size: 13px;
+    cursor: pointer;
+    background-color: #64b5f6;
+    color: #ffffff !important;
+}
+.dark .speak button {
+    background-color: #1976d2;
+}
+
+.speak textarea {
+    resize: none;
+    display: inline-flex;
+    caret-color: coral;
+    height: 40px;
+    border-radius: 6px 6px 0 0;
+    border: none;
+    transition: 0.3s;
+    padding: 10px 5px 0;
+}
+.speak textarea:focus {
+    height: 150px;
+    color: black;
+    outline: none;
+}
+.dark .speak textarea:focus {
+    color: white;
+}
+.speak textarea::placeholder {
+    text-align: center;
+}
+.speak:has(button:hover) textarea,
+textarea:hover {
+    height: 150px;
+}

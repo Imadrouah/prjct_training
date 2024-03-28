@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="color-scheme" content="light" />
+        <title>Learn JavaScript</title>
+        <link rel="stylesheet" href="all.min.css" />
+        <link rel="stylesheet" href="style.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+    <body light>
+        <form action="">
+            <div class="part1">
+                <div class="myName">
+                    <label class="unique" for="name"
+                        >Username: <span class="lbl"></span
+                    ></label>
+                    <input
+                        class="myInp"
+                        id="name"
+                        type="text"
+                        name="username"
+                        placeholder="Max length: 10 characters"
+                    />
+                </div>
+                <div class="myAge">
+                    <label class="unique" for="age"
+                        >Age: <span class="lbl"></span
+                    ></label>
+                    <input
+                        class="myInp"
+                        id="age"
+                        type="number"
+                        name="age"
+                        placeholder="Age is required"
+                    />
+                    <small>Please enter your age using numbers only.</small>
+                </div>
+            </div>
+            <div class="part2">
+                <div class="choice">
+                    <input type="submit" value="submit data" />
+                    <button type="button">
+                        <span id="shw">Show</span> Sent Info
+                    </button>
+                </div>
+                <div class="info">
+                    <div class="n1">
+                        <span>name:</span>
+                        <div class="nam"></div>
+                    </div>
+                    <div class="n2">
+                        <span>age:</span>
+                        <div class="ag"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="p2">
+                <!-- <a href="https://google.com">Google</a> -->
+                <label>
+                    <input
+                        value="light"
+                        class="toggle-checkbox"
+                        type="checkbox"
+                    />
+                    <div class="toggle-switch"></div>
+                </label>
+            </div>
+        </form>
+        <div class="speak">
+            <textarea placeholder="Let Your Thoughts Speak"></textarea>
+            <button>speak</button>
+        </div>
+        <span></span>
+        <!-- end DOM -->
+        <script src="main.js"></script>
+    </body>
+</html>
